@@ -7,6 +7,11 @@ class Reminder extends CI_Model {
         $this->db->insert('reminders', $data);
         return true;
     }
+	
+	public function select_all(){
+        
+        return true;
+    }
 
     
 }
