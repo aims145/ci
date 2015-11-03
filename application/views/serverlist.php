@@ -36,7 +36,7 @@
                                             <th>Server IP</th>
                                             <th>Remark</th>
                                             <?php if ($this->session->userdata['logged_in']['role'] == 'admin') { ?>
-                                            <th>Edit / Delete</th>
+                                            <th>View / Edit / Delete</th>
                                             <?php } ?>
                                             
                                         </tr>
@@ -50,7 +50,8 @@
                                                     '</td>' . '<td>' . $server->Remark . '</td>';
 if ($this->session->userdata['logged_in']['role'] == 'admin'){ 													
                                                    echo '<td>    
-                                                    
+
+<a href="'.base_url().'server/serverlist#viewserver" data-id="'.$server->id.'" data-toggle="modal" class="btn btn-default viewserver" >View</a>                                                    
 <a href="'.base_url().'server/serverlist#editserver" data-id="'.$server->id.'" data-toggle="modal" class="btn btn-primary editserver" onclick="editserver(this);">Edit</a>
 <a href="'.base_url().'server/serverlist#deleteserver" data-id="'.$server->id.'" data-toggle="modal" class="btn btn-danger delserver">Delete</a>
                                                     </td>';
@@ -77,6 +78,103 @@ if ($this->session->userdata['logged_in']['role'] == 'admin'){
            
         </div>
         <!-- /#page-wrapper -->
+        
+    <div class="modal fade" id="viewserver">
+    	<div class="modal-dialog" style="width: 70%;">
+    	<div class="modal-content">
+    		<div class="modal-header">
+    			<h4 class="text-left" id="serverhead"></h4>
+    		</div>
+    		<div class="modal-body">
+<div class="row">
+	<div class="col-lg-3">
+	<div class="panel panel-info">
+  	<div class="panel-heading">Memory</div>
+  	<div class="panel-body">
+  		<img src="<?php echo base_url();?>public/images/632147656250a-data_ram.png" style="width: 100%;"/>	
+  	</div>
+  	<div class="panel-footer">
+  	<h3 class="text-center" id="ram"></h3>	
+  	</div>
+	</div>	
+	</div>
+	
+	<div class="col-lg-3">
+	<div class="panel panel-info">
+  	<div class="panel-heading">Storage</div>
+  	<div class="panel-body">
+  		<img src="<?php echo base_url();?>public/images/hdd.png" style="width: 100%;"/>	
+  	</div>
+  	<div class="panel-footer">
+  	<h3 class="text-center" id="hdd"></h3>	
+  	</div>
+	</div>	
+	</div>
+	
+	<div class="col-lg-3">
+	<div class="panel panel-info">
+  	<div class="panel-heading">CPU</div>
+  	<div class="panel-body">
+  		<img src="<?php echo base_url();?>public/images/cpu.png" style="width: 100%;"/>	
+  	</div>
+  	<div class="panel-footer">
+  	<h3 class="text-center" id="cpu"></h3>	
+  	</div>
+	</div>	
+	</div>
+	
+	<div class="col-lg-3">
+	<div class="panel panel-info">
+  	<div class="panel-heading">OS</div>
+  	<div class="panel-body">
+  		<img src="<?php echo base_url();?>public/images/linux.png" style="width: 100%;"/>	
+  	</div>
+  	<div class="panel-footer">
+  	<strong><p class="text-center" id="os"></p></strong>	
+  	</div>
+	</div>	
+	</div>
+	
+	
+</div>
+
+
+
+
+
+
+    			
+    		</div>
+			<div class="modal-footer">
+				<a class="btn btn-danger pull-right" data-dismiss="modal">Close</a>
+			</div>    	
+    	
+    	</div>
+    		
+    	</div>
+    	
+    </div>    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
 <div class="modal fade" id="addserver">
         <div class="modal-dialog">

@@ -7,57 +7,7 @@
 #search-box{padding: 10px;border: #F0F0F0 1px solid;}
 #search-box2{padding: 10px;border: #F0F0F0 1px solid;}
 </style>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-$(document).ready(function(){
-	$("#search-box").keyup(function(){
-		$.ajax({
-		type: "POST",
-		url: "http://10.222.9.6/ci/pkgslist.php",
-		data:'keyword='+$(this).val()+'&status=Available',
-		beforeSend: function(){
-			$("#search-box").css("background","#FFF url(http://localhost/ci/LoaderIcon.gif) no-repeat 165px");
-		},
-		success: function(data){
-			$("#suggesstion-box").show();
-			$("#suggesstion-box").html(data);
-			$("#search-box").css("background","#FFF");
-		}
-		});
-	});
-});
-
-
-$(document).ready(function(){
-	$("#search-box2").keyup(function(){
-		$.ajax({
-		type: "POST",
-		url: "http://10.222.9.6/ci/pkgslist.php",
-		data:'keyword='+$(this).val()+'&status=Installed',
-		beforeSend: function(){
-			$("#search-box2").css("background","#FFF url(http://localhost/ci/LoaderIcon.gif) no-repeat 165px");
-		},
-		success: function(data){
-			$("#suggesstion-box2").show();
-			$("#suggesstion-box2").html(data);
-			$("#search-box2").css("background","#FFF");
-		}
-		});
-	});
-});
-//To select country name
-function selectCountry(val) {
-$("#search-box").val(val);
-$("#suggesstion-box").hide();
-}
-
-function selectCountry1(val) {
-$("#search-box2").val(val);
-$("#suggesstion-box2").hide();
-}
-
-</script>
 <div id="page-wrapper">
     <div class="row">
                 <div class="col-lg-12">

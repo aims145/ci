@@ -55,6 +55,7 @@ $route['logout'] = 'Logout/index';
 $route['admin'] = 'admin/Dashboard/dashindex';
 $route['server'] = 'admin/Server/serverlist';
 $route['server/serverlist'] = 'admin/Server/serverlist';
+$route['server/selectone'] = 'admin/Server/selectone';
 $route['server/addserver'] = 'admin/Server/addserver';
 $route['server/deleteserver'] = 'admin/Server/deleteserver';
 $route['server/editserver/(:num)'] = 'admin/Server/editserver/$1';

@@ -5,7 +5,7 @@ class Packages extends CI_Model {
     
     public function available(){
         $this->db->select('package');
-        $this->db->from('Packages');
+        $this->db->from('packages');
         $this->db->where('server_name','Localhost');
         $this->db->where('status','Available');
         $query = $this->db->get();

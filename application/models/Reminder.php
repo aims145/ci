@@ -9,8 +9,14 @@ class Reminder extends CI_Model {
     }
 	
 	public function select_all(){
-        
-        return true;
+        $this->db->select('*');
+		$this->db->from('reminders');
+		$query = $this->db->get();
+		if ($query->num_rows() > 0) {
+		return $query->result();
+		} else {
+		return false;
+		}
     }
 
     

@@ -1,3 +1,9 @@
+<style type="text/css">
+    .panel-group{
+        margin-bottom: 0px;
+    }
+</style>    
+    
 <div id="page-wrapper">
 <div class="page-header">
 	<h2>Reminder</h2>
@@ -17,38 +23,48 @@
 
 <hr>
 
+<div class="row" id="lists">
+        <div class="col-lg-12">
+            <?php if(is_array($show_table) || is_object($show_table)){
+ foreach ($show_table as $cmds){      
+?>
+            
+        <div class="panel-group hidepanel" id="accordion">
+        	
+    <div class="panel panel-default">
+      <div class="panel-heading">
+      	<div class="row">
+      	<div class="col-lg-10">
+        <h4 class="panel-title searchtag">
+<a data-toggle="collapse" data-parent="#accordion" href="#<?php echo $cmds->id;  ?>"><?php echo $cmds->title;  ?></a>
+          
+        </h4>
+        </div>
+     
+        <div class="col-lg-2">
+            <!-- <a class="btn btn-default editcmd" href="#editcmd" data-toggle="modal" data-id="<?php echo $cmds->id;?>">Edit</a>
+     <a class="btn btn-danger pull-right deletecmd" href="#deletcmd" data-toggle="modal" data-id="<?php echo $cmds->id;?>">Delete</a> -->
+        </div>
+        </div>
+      </div>
+      <div id="<?php echo $cmds->id;  ?>" class="panel-collapse collapse">
+          <div class="panel-body">
+              <h3   >Time</h3>
+              <pre><?php echo $cmds->date_time; ?></pre>
+              <h3   >Description</h3>
+              <textarea readonly rows="3" class="form-control"><?php echo $cmds->description; ?></textarea>
+          </div>
+      </div>
+    </div>
+        </div>
+            
+            <?php }
+            }?>
 
-<div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Reminders List
-                        </div>
-                        <!-- /.panel-heading -->
+            
+        </div>
+    </div>
 
-							
-                            <div class="panel-body">
-                            	
-                            
-                        	</div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
-</div>
-
-
-
-
-
-
-
-
-
-
-
-</div>
 
 
 

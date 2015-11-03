@@ -16,10 +16,10 @@ class Scheduler extends CI_Controller{
      }
  
 public function remindme(){
-	
+	$data['show_table'] = $this->Reminder->select_all();
 	$this->load->view('header');
 	$this->load->view('dashboard');
-	$this->load->view('scheduler/remindme');
+	$this->load->view('scheduler/remindme', $data);
 	$this->load->view('footer');
 } 
 
@@ -30,8 +30,7 @@ public function addreminder(){
     $desc = $this->input->post('desc');
     $data = array(
         'title' => $title,
-        'date' => $date,
-        'time' => $time,
+        'date_time' => $date." ".$time,
         'description' => $desc
     );
     

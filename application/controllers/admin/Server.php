@@ -18,6 +18,18 @@ class Server extends CI_Controller{
         $this->load->view('footer');
        
     }
+	
+	public function selectone(){
+        $id = $this->input->post('serverid');
+		$result = $this->Serverlist->select_one($id);
+		echo json_encode($result);
+       
+    }
+	
+	
+	
+	
+	
     
 //public function addserver(){
 //        

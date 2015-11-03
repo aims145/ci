@@ -14,6 +14,20 @@ return false;
 }
 }
 
+public function select_one($id) {
+$this->db->select('*');
+$this->db->from('server_list');
+$this->db->where('id', $id);
+$query = $this->db->get();
+if ($query->num_rows() > 0) {
+return $query->result();
+} else {
+return false;
+}
+}
+
+
+
 function delete($id){
     $this->db->where('id',$id);
     $this->db->delete('server_list');

@@ -138,6 +138,40 @@ $(document).on("click", ".delserver", function () {
      document.getElementById('serverid').value = serverid;
      
 });
+$(document).on("click", ".viewserver", function () {
+     var serverid = $(this).data('id');
+     //alert(serverid);
+     $.ajax({
+      type : 'post',
+      url  : '<?php echo base_url();?>server/selectone',
+      data : "serverid="+serverid,
+      //dataType : 'json',
+      success : function(res) {
+          //console.log(res);
+//          var obj = $.parseJSON(res);
+          var dataObj = JSON.parse(res);
+        //console.log(dataObj[0].title); // to see the object
+        var servername = dataObj[0].server_name;
+        var serverip = dataObj[0].server_ip;
+        var os = dataObj[0].OS;
+        var ram = dataObj[0].RAM;
+        var hdd = dataObj[0].HDD;
+        var cpu = dataObj[0].CPU;
+        // your code here
+        document.getElementById('serverhead').innerHTML = servername+" - "+serverip;
+        document.getElementById('ram').innerHTML = ram+" RAM";
+        document.getElementById('hdd').innerHTML = hdd+" HDD";
+        document.getElementById('cpu').innerHTML = cpu+" CPU";
+        document.getElementById('os').innerHTML = os;
+        }
+      
+    });
+       
+     
+});
+
+
+
 
 function editserver(element){
      $(document).on("click", ".editserver", function () {
@@ -401,6 +435,60 @@ $(document).on("click", ".fulltutos", function () {
 }(jQuery));
  
   </script>
+  
+  
+  <script type="text/javascript">
+$(document).ready(function(){
+	$("#search-box").keyup(function(){
+		$.ajax({
+		type: "POST",
+		url: "http://10.222.10.160/ci/pkgslist.php",
+		data:'keyword='+$(this).val()+'&status=Available',
+		beforeSend: function(){
+			$("#search-box").css("background","#FFF url(http://localhost/ci/LoaderIcon.gif) no-repeat 165px");
+		},
+		success: function(data){
+			$("#suggesstion-box").show();
+			$("#suggesstion-box").html(data);
+			$("#search-box").css("background","#FFF");
+		}
+		});
+	});
+});
+
+
+$(document).ready(function(){
+	$("#search-box2").keyup(function(){
+		$.ajax({
+		type: "POST",
+		url: "http://10.222.10.160/ci/pkgslist.php",
+		data:'keyword='+$(this).val()+'&status=Installed',
+		beforeSend: function(){
+			$("#search-box2").css("background","#FFF url(http://localhost/ci/LoaderIcon.gif) no-repeat 165px");
+		},
+		success: function(data){
+			$("#suggesstion-box2").show();
+			$("#suggesstion-box2").html(data);
+			$("#search-box2").css("background","#FFF");
+		}
+		});
+	});
+});
+//To select country name
+function selectCountry(val) {
+$("#search-box").val(val);
+$("#suggesstion-box").hide();
+}
+
+function selectCountry1(val) {
+$("#search-box2").val(val);
+$("#suggesstion-box2").hide();
+}
+
+</script>
+  
+  
+  
   <!-- <script type="text/javascript">
   	/* pagination plugin */
 $.fn.pageMe = function(opts){
