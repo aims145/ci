@@ -142,5 +142,25 @@ public  function tutos_one($id,$table){
     
 }
 
-    
+
+ public function selectall_scripts($limit, $start) {
+        //$sql = "imp_cmds ORDER BY `imp_cmds`.`time` ASC limit ".$start.",".$limit;
+       $this->db->limit($limit, $start);
+       $query = $this->db->get("imp_scripts");
+        
+        if ($query->num_rows() > 0) {
+        return $query->result();
+        } else {
+        return false;
+        }
+        }
+        public function scritpscount(){
+            return $this->db->count_all("imp_scripts");
+        }   
+
+    public function insertscript($data){
+        $this->db->insert('imp_scripts', $data);
+        return true;
+    }
+	
 }

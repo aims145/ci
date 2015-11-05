@@ -272,6 +272,37 @@ $(document).ready(function() {
 
 </script>
 
+<script>
+function downloadfile(abc){
+	var script = document.getElementsByClassName(abc)[0].innerHTML;
+	
+	
+
+downloadInnerHtml(script);
+
+}
+
+
+function downloadInnerHtml(elHtml) {
+	var filename =  'Script.txt';
+    var link = document.createElement('a');
+    mimeType = 'text/plain';
+
+    link.setAttribute('download', filename);
+    link.setAttribute('href', 'data:' + mimeType + ';charset=utf-8,' + encodeURIComponent(elHtml));
+    link.click(); 
+}
+
+
+// $(document).ready(function(){
+// elHtml = document.getElementById('main').innerHTML;
+// $('#yeah').show('puff', 750);
+// });
+
+
+</script>
+
+
 <script type='text/javascript'>
         var options = {
             currentPage: 1,

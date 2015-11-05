@@ -3,7 +3,10 @@
     .panel-group{
         margin-bottom: 0px;
     }
-</style>
+    .panel-heading{
+    background-color: #C5C5C5 !important;
+    }
+</style> 
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">

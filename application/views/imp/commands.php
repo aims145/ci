@@ -3,8 +3,10 @@
     .panel-group{
         margin-bottom: 0px;
     }
-</style>    
-    
+    .panel-heading{
+    background-color: #C5C5C5 !important;
+    }
+</style>  
     
     <div id="page-wrapper">
     <div class="row">
@@ -60,7 +62,7 @@
               <h3   >Command</h3>
               <pre><?php echo $cmds->command; ?></pre>
               <h3   >Details</h3>
-              <textarea readonly rows="10" class="form-control"><?php echo $cmds->description; ?></textarea>
+              <textarea readonly rows="5" class="form-control"><?php echo $cmds->description; ?></textarea>
           </div>
       </div>
     </div>

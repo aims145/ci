@@ -2,6 +2,9 @@
     .panel-group{
         margin-bottom: 0px;
     }
+    .panel-heading{
+    background-color: #C5C5C5 !important;
+    }
 </style>    
     
 <div id="page-wrapper">
