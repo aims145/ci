@@ -37,10 +37,10 @@
     <div class="panel panel-default">
       <div class="panel-heading">
       	<div class="row">
-      	<div class="col-lg-10">
+      	<div class="col-lg-12">
         <h4 class="panel-title searchtag">
 <a data-toggle="collapse" data-parent="#accordion" href="#<?php echo $cmds->id;  ?>"><?php echo $cmds->title;  ?></a>
-          
+    <?php if($cmds->status == 1){ echo "<p class='pull-right' style='color:red;'>Expired</p>"; }?>      
         </h4>
         </div>
      
