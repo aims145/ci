@@ -20,8 +20,7 @@
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="/ci/assets/bower_components/metisMenu/dist/metisMenu.min.js"></script>
-<script type="text/javascript"
-     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+<script type="text/javascript"  src="/ci/assets/dist/js/bootstrap-datetimepicker.js">
     </script>
     <!-- Custom Theme JavaScript -->
     <script src="/ci/assets/dist/js/sb-admin-2.js"></script>
@@ -301,13 +300,27 @@ function downloadInnerHtml(elHtml) {
 
 
 </script>
+<script type="text/javascript">
+function validuser(){
+    if($('#pass').val()!=$('#cpass').val()){
+       alert('Password not matches');
+       return false;
+   }
+   return true;
+    
+}
 
+function getid(){
+    alert('reaching');
+    return false;
+}
+</script>
 
 <script type='text/javascript'>
         var options = {
             currentPage: 1,
             totalPages: 10
-        }
+        };
 
         $('#example').bootstrapPaginator(options);
     </script>
@@ -518,7 +531,15 @@ $("#suggesstion-box2").hide();
 
 </script>
   
-  
+<script type="text/javascript" >
+
+$(document).on("click", ".deleteuser", function () {
+     var userid = $(this).data('id');
+     document.getElementById('userid').value = userid;
+     
+});
+
+</script>
   
   <!-- <script type="text/javascript">
   	/* pagination plugin */

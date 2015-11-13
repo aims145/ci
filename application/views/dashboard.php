@@ -381,6 +381,9 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                        <li> 
+                            <a href="/ci/admin/users"><i class=" glyphicon glyphicon-user"></i> User Management</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

@@ -18,7 +18,7 @@
     <!-- MetisMenu CSS -->
     <link href="/ci/assets/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen"
-     href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
+     href="/ci/assets/dist/css/bootstrap-datetimepicker.min.css">
 <!--    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">-->
     <!-- Custom CSS -->
     <link href="/ci/assets/dist/css/sb-admin-2.css" rel="stylesheet">
