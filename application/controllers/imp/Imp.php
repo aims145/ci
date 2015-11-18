@@ -177,54 +177,7 @@ class Imp extends CI_Controller{
 	}
             
             
-/////////////////// Tutorials --------------------------
-public function tutos($error = NULL)
-{               $data['show_tables'] = $this->Cmd->tutos_all();
-		$data['error'] = $error;
-		// $data['msg'] = $msg;
-        $this->load->view('header');
-        $this->load->view('dashboard');
-        // $data['show_table'] = $this->Cmd->select_tutos();
-        $this->load->view('imp/tutos',$data);
-        $this->load->view('footer');
-		
-}
 
-public function addtutos(){
-	$title = $this->input->post('title');
-	$description = $this->input->post('description');
-	$config['upload_path'] = './public/uploads';
-	$config['allowed_types'] = 'jpg|jpeg|png|gif';
-	$config['encrypt_name'] = TRUE;
-	$this->load->library('upload',$config);
-	if(!$this->upload->do_upload()){
-		$error = $this->upload->display_errors();
-		$this->tutos($error);
-	}
-else{
-	$file_data = $this->upload->data();
-	//print_r($file_data);
-	$filename = base_url().'public/uploads/'.$file_data['file_name'];
-	$data = array(
-          'title' => $title,
-          'featured_image' => $filename,
-          'description' => $description  
-        );
-        if($this->Cmd->tutorials($data)){
-//            echo "data inserted";
-                redirect('server/imp/tutos');
-            
-        }
-		}
-	
-		}
-public function selecttuto(){
-	$id = $this->input->post('tutoid');
-	$table = $this->input->post('table');
-	
-	$result = $this->Cmd->tutos_one($id,$table);
-	echo json_encode($result);
-}          
 
 
 public function scripts($msg = NULL)

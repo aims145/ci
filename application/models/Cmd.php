@@ -105,43 +105,6 @@ public function insertlink($data){
   }
 
 
-///////////////// Tutorials ----------------
-public function tutorials($data){
-    if($this->db->insert('tutorials', $data)){
-        return true;
-    }
-	
-}
-
-public  function tutos_all(){
-    
-        $this->db->select('*');
-        $this->db->order_by("Time", "desc");
-        $this->db->from('tutorials');
-        $query = $this->db->get();
-        if ($query->num_rows() > 0) {
-        return $query->result();
-        } else {
-        return false;
-        }
-    
-}
-
-public  function tutos_one($id,$table){
-		$this->table = $table;
-    
-        $this->db->select('*');
-        $this->db->where("id", $id);
-        $this->db->from($table);
-        $query = $this->db->get();
-        if ($query->num_rows() > 0) {
-        return $query->result();
-        } else {
-        return false;
-        }
-    
-}
-
 
  public function selectall_scripts($limit, $start) {
         //$sql = "imp_cmds ORDER BY `imp_cmds`.`time` ASC limit ".$start.",".$limit;
