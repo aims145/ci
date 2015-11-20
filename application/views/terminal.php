@@ -32,7 +32,7 @@ window.onresize=resize_iframe;
                     <div class="col-lg-12">
                         <h1 class="page-header">Terminal</h1>
                         <div id="frame" class="col-md-12 main">
-                            <iframe id="glu" frameborder="0" width="100%" onload="resize_iframe()" src="http://10.222.9.6:6161">
+                            <iframe id="glu" frameborder="0" width="100%" onload="resize_iframe()" src="http://10.222.10.160:6161">
 </iframe>
 </div>
                     </div>
