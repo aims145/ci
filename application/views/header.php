@@ -14,7 +14,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="/ci/assets/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
+<script src="/ci/assets/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- MetisMenu CSS -->
     <link href="/ci/assets/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen"

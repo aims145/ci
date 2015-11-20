@@ -1,3 +1,12 @@
+ <script>
+ $(document).ready(function(){
+ setInterval(function(){cache_clear()},5000);
+ });
+ function cache_clear()
+{
+ window.location.reload(true);
+}
+</script>
 <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
