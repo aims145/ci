@@ -304,7 +304,9 @@
                                     <a href="<?php echo base_url();?>server/imp/scripts">Scripts</a>
                                 </li>
                                 
-                                
+                                <li>
+                                    <a href="<?php echo base_url();?>server/imp/sshkeys">SSHKeys</a>
+                                </li>
                                
                                 
                             </ul>

@@ -105,7 +105,6 @@ public function insertlink($data){
   }
 
 
-
  public function selectall_scripts($limit, $start) {
         //$sql = "imp_cmds ORDER BY `imp_cmds`.`time` ASC limit ".$start.",".$limit;
        $this->db->limit($limit, $start);
@@ -125,5 +124,32 @@ public function insertlink($data){
         $this->db->insert('imp_scripts', $data);
         return true;
     }
+	
+public function selectall_keys($limit, $start) {
+        //$sql = "imp_cmds ORDER BY `imp_cmds`.`time` ASC limit ".$start.",".$limit;
+       $this->db->limit($limit, $start);
+       $query = $this->db->get("imp_keys");
+        
+        if ($query->num_rows() > 0) {
+        return $query->result();
+        } else {
+        return false;
+        }
+        }
+        public function keyscount(){
+            return $this->db->count_all("imp_keys");
+        }   
+
+    public function insertkey($data){
+        $this->db->insert('imp_keys', $data);
+        return true;
+    }
+		
+	public function delkey($id){
+    $this->db->where('id',$id);
+    $this->db->delete('imp_keys');
+    return true;
+  }
+	
 	
 }

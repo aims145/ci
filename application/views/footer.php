@@ -204,6 +204,14 @@ $(document).on("click", ".deletelink", function () {
      
 });
 
+
+$(document).on("click", ".deletekey", function () {
+     var linkid = $(this).data('id');
+     //alert(credid);
+     document.getElementById('keyid').value = linkid;
+     
+});
+
 $(document).on("click", ".editcmd", function () {
      var cmdid = $(this).data('id');
      $.ajax({
@@ -404,47 +412,6 @@ $(document).on("click", ".fulltutos", function () {
 </script>
 
 
-
-
-<!-- <script type="text/javascript">
-	$(document).ready(function(){
-	$("#search-box").keyup(function(){
-		
-//		var text = $(this).val();
-//		//console.log(text);
-		
-		$.ajax({
-		type: "POST",
-		url: "<?php echo base_url(); ?>server/imp/searchresult",
-		data:'string='+$(this).val()+'&table=imp_cmds',
-		dataType : 'json',
-		// beforeSend: function(){
-			// $("#search-box").css("background","#FFF url(http://localhost/ci/LoaderIcon.gif) no-repeat 165px");
-		// },
-		success: function(data){
-                    var i;
-                    var id = new Array();
-                    var titles = new Array();
-                    var command = new Array();
-                    var description = new Array();
-                    for(i = 0; i < data.length; i++){
-                    titles[i] = data[i].title;
-                    command[i] = data[i].command;
-                    id[i] = data[i].id;
-                    description[i] = data[i].description;
-                    }
-                    $('.hidepanel').slideUp();
-                    if($("#search-box").val() === ''){
-                    $('.hidepanel').slideDown();
-                    }
-//                $("#lists").find(".hidepanel").slideDown();
-//$("#lists").find(".searchtag:Contains(" + titles + ")").parent().parent().parent().parent().parent().slideDown();
-		}
-		});
-	});
-});
-</script> -->
-
 <script> 
  
 (function ($) {
@@ -540,131 +507,7 @@ $(document).on("click", ".deleteuser", function () {
 });
 
 </script>
-  
-  <!-- <script type="text/javascript">
-  	/* pagination plugin */
-$.fn.pageMe = function(opts){
-    var $this = this,
-        defaults = {
-            perPage: 7,
-            showPrevNext: false,
-            numbersPerPage: 1,
-            hidePageNumbers: false
-        },
-        settings = $.extend(defaults, opts);
-    
-    var listElement = $this;
-    var perPage = settings.perPage; 
-    var children = listElement.children();
-    var pager = $('.pagination');
-    
-    if (typeof settings.childSelector!="undefined") {
-        children = listElement.find(settings.childSelector);
-    }
-    
-    if (typeof settings.pagerSelector!="undefined") {
-        pager = $(settings.pagerSelector);
-    }
-    
-    var numItems = children.size();
-    var numPages = Math.ceil(numItems/perPage);
 
-    var curr = 0;
-    pager.data("curr",curr);
-    
-    if (settings.showPrevNext){
-        $('<li><a href="#" class="prev_link">«</a></li>').appendTo(pager);
-    }
-    
-    while(numPages > curr && (settings.hidePageNumbers==false)){
-        $('<li><a href="#" class="page_link">'+(curr+1)+'</a></li>').appendTo(pager);
-        curr++;
-    }
-  
-    if (settings.numbersPerPage>1) {
-       $('.page_link').hide();
-       $('.page_link').slice(pager.data("curr"), settings.numbersPerPage).show();
-    }
-    
-    if (settings.showPrevNext){
-        $('<li><a href="#" class="next_link">»</a></li>').appendTo(pager);
-    }
-    
-    pager.find('.page_link:first').addClass('active');
-    pager.find('.prev_link').hide();
-    if (numPages<=1) {
-        pager.find('.next_link').hide();
-    }
-  	pager.children().eq(0).addClass("active");
-    
-    children.hide();
-    children.slice(0, perPage).show();
-    
-    pager.find('li .page_link').click(function(){
-        var clickedPage = $(this).html().valueOf()-1;
-        goTo(clickedPage,perPage);
-        return false;
-    });
-    pager.find('li .prev_link').click(function(){
-        previous();
-        return false;
-    });
-    pager.find('li .next_link').click(function(){
-        next();
-        return false;
-    });
-    
-    function previous(){
-        var goToPage = parseInt(pager.data("curr")) - 1;
-        goTo(goToPage);
-    }
-     
-    function next(){
-        goToPage = parseInt(pager.data("curr")) + 1;
-        goTo(goToPage);
-    }
-    
-    function goTo(page){
-        var startAt = page * perPage,
-            endOn = startAt + perPage;
-        
-        children.css('display','none').slice(startAt, endOn).show();
-        
-        if (page>=1) {
-            pager.find('.prev_link').show();
-        }
-        else {
-            pager.find('.prev_link').hide();
-        }
-        
-        if (page<(numPages-1)) {
-            pager.find('.next_link').show();
-        }
-        else {
-            pager.find('.next_link').hide();
-        }
-        
-        pager.data("curr",page);
-       
-        if (settings.numbersPerPage>1) {
-       		$('.page_link').hide();
-       		$('.page_link').slice(page, settings.numbersPerPage+page).show();
-    	}
-      
-      	pager.children().removeClass("active");
-        pager.children().eq(page+1).addClass("active");
-    
-    }
-};
-/* end plugin */
-  	
-  	
-$(document).ready(function(){
-    
-  $('#accordion').pageMe({pagerSelector:'#myPager',childSelector:'.panel',showPrevNext:true,hidePageNumbers:false,perPage:5});
-    
-});
-  </script> -->
 </body>
 
 </html>
