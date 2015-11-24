@@ -270,7 +270,27 @@
                         <li> 
                             <a href="/ci/server/credentials"><i class="fa fa-edit fa-fw"></i>Credentials</a>
                         </li>
-          				<?php } ?>              
+          				<?php } ?>     
+          				
+          				<li>
+                            <a href="#"><i class="fa fa-desktop fa-fw"></i>Monitor<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo base_url();?>server/monitor/host">Host</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo base_url();?>server/monitor/services">Service</a>
+                                </li>
+                               
+                               <li>
+                                    <a href="<?php echo base_url();?>server/monitor/graphs">Graphs</a>
+                                </li>
+                               
+                               
+                                
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>         
                  
                         <li>
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Tools<span class="fa arrow"></span></a>

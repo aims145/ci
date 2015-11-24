@@ -15,6 +15,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="/ci/assets/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="/ci/assets/bower_components/jquery/dist/jquery.min.js"></script>
+
     <!-- MetisMenu CSS -->
     <link href="/ci/assets/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen"
@@ -27,6 +28,9 @@
     
     
 	<link href="/ci/assets/dist/css/jquery.classyedit.css" rel="stylesheet">
+	<link href="/ci/assets/dist/css/bootstrap-multiselect.css" rel="stylesheet">
+<!--        <link href="/ci/assets/dist/css/bootstrap-switch.min.css" rel="stylesheet">-->
+        
 	     
 <!-- BEGIN PAGE LEVEL STYLES -->
 <link rel="stylesheet" type="text/css" href="/ci/assets/global/plugins/select2/select2.css"/>

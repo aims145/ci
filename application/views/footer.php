@@ -29,7 +29,10 @@
 <script src="/ci/assets/dist/js/bootstrap-timepicker.js"></script>
 <script src="/ci/assets/dist/js/pgenerator.js"></script>
 <script src="/ci/assets/dist/js/bootstrap-paginator.min.js"></script>
+<script src="/ci/assets/dist/js/bootstrap-multiselect.js"></script>
 <script src="/ci/assets/dist/js/jquery.classyedit.js"></script>
+<!--<script src="/ci/assets/dist/js/bootstrap-switch.min.js"></script>-->
+
 
 
 
@@ -37,6 +40,7 @@
 <!-- BEGIN PAGE LEVEL PLUGINS -->
 <script type="text/javascript" src="/ci/assets/global/plugins/select2/select2.min.js"></script>
 <script type="text/javascript" src="/ci/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
+
 <script type="text/javascript" src="/ci/assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
 <script type="text/javascript" src="/ci/assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
 <script type="text/javascript" src="/ci/assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js"></script>
@@ -268,6 +272,35 @@ $(document).on("click", ".editlink", function () {
      
 });
 
+
+
+$(document).on("click", ".monitor", function () {
+     var id = $(this).data('id');
+     var value = $(this).val();
+     
+//     alert(linkid);
+    if(value === 'OFF'){
+        var flag = '1';
+        $(this).val('ON');
+        $(this).addClass('btn-primary').removeClass('btn-warning');
+    }
+    else{
+        var flag =  '0';
+        $(this).val('OFF');
+        $(this).addClass('btn-warning').removeClass('btn-primary');
+    }
+      $.ajax({
+      type : 'post',
+      url  : '<?php echo base_url();?>server/monitor/hostupdate',
+      data : "id="+id+"&flag="+flag,
+      //dataType : 'json',
+      success : function() {
+                  }
+        
+        
+    }); 
+     
+});
 </script>
 <script>
 
@@ -507,6 +540,13 @@ $(document).on("click", ".deleteuser", function () {
 });
 
 </script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#hostmultiselect').multiselect();
+    });
+</script>
+
 
 </body>
 
