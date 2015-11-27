@@ -32,7 +32,12 @@ public function update_host($id,$data){
     
 }
    
-   
+public function deletehost($id){
+    $this->db->where('id',$id);
+    $this->db->delete('monitor_host');
+    return "Host Deleted Successfully";
+    
+}   
    
 	
 	

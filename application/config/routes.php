@@ -83,6 +83,7 @@ $route['server/imp/addkey'] = 'imp/Imp/addkey';
 $route['server/imp/delkey'] = 'imp/Imp/delkey';
 $route['server/monitor/host'] = 'monitor/Monitor/host';
 $route['server/monitor/hostadd'] = 'monitor/Monitor/hostadd';
+$route['server/monitor/deletehost'] = 'monitor/Monitor/deletehost';
 $route['server/monitor/hostupdate'] = 'monitor/Monitor/hostupdate';
 $route['server/imp/scripts/(:num)'] = 'imp/Imp/scripts/$1';
 $route['server/scheduler/remindme'] = 'scheduler/Scheduler/remindme';

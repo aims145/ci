@@ -37,9 +37,24 @@ class Cmd extends CI_Model {
  
  
  
-public function insertlink($data){
-        $this->db->insert('imp_links', $data);
-        return true;
+public function insertlink($title,$link,$des){
+        $this->db->select('title');
+        $this->db->from('imp_links');
+        $query = $this->db->get();
+        $alltitles = $query->result();
+        
+        foreach ($alltitles as $old){
+        if($title == $old->title){
+            return "Link with Same title already Exist";
+        }
+        }
+        $data = array(
+                'title' => $title,
+                'link'  => $link,
+                'description' => $des
+            );
+            $this->db->insert('imp_links', $data);
+            return "Link inserted Successfully";
     }
 
         public function select_links() {

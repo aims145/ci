@@ -97,36 +97,32 @@ class Imp extends CI_Controller{
 
 
       public function addlink(){
-        $data = array(
-        'title' =>  $this->input->post('linkname'),
-        'link' => $this->input->post('link'),
-        'description' => $this->input->post('details')           
-        );
-        if($this->Cmd->insertlink($data)){
-            $msg = "Link added Successfully";
-//            echo "inserted ".$msg;
-			//echo "<script>alert('Link has been Inserted Successfully');</script>";
-            redirect('server/imp/links', 'refresh');
-        }
+        
+        $title =  $this->input->post('linkname');
+        $link = $this->input->post('link');
+        $des = $this->input->post('details');               
+        $msg = $this->Cmd->insertlink($title,$link,$des);
+        $this->links($msg);
+        
        
     }
 	  
-	  public function delcmd(){
-	  	$id = $this->input->post('cmdid');
-		if($this->Cmd->delcmd($id)){
-			$msg = "Command Deleted Successfully";
-			$this->commands($msg);
-		}
-	  }
+  public function delcmd(){
+        $id = $this->input->post('cmdid');
+        if($this->Cmd->delcmd($id)){
+                $msg = "Command Deleted Successfully";
+                $this->commands($msg);
+        }
+  }
 
 
-		public function dellink(){
-	  	$id = $this->input->post('linkid');
-		if($this->Cmd->dellink($id)){
-			$msg = "Command Deleted Successfully";
-			$this->links($msg);
-		}
-	  }
+    public function dellink(){
+    $id = $this->input->post('linkid');
+    if($this->Cmd->dellink($id)){
+            $msg = "Command Deleted Successfully";
+            $this->links($msg);
+    }
+}
 		
     public function selectone(){
       $id = $this->input->post('cmdid');

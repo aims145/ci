@@ -92,6 +92,7 @@ $(document).ready(function() {
     } );
 } );
 </script>
+<!--All script action with class -->
 <script type="text/javascript">
     $(document).on("click", ".delete", function () {
      var credid = $(this).data('id');
@@ -301,6 +302,13 @@ $(document).on("click", ".monitor", function () {
     }); 
      
 });
+
+$(document).on("click", ".deletehost", function () {
+     var id = $(this).data('id');
+        console.log(id);
+    document.getElementById('mon_host_id').value = id;
+});
+
 </script>
 <script>
 

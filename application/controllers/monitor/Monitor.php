@@ -43,5 +43,11 @@ public function hostupdate(){
         echo "0";
     }
 }
+
+public function deletehost(){
+    $hostid = $this->input->post('mon_host_id');
+     $result = $this->Monitor_model->deletehost($hostid);
+     $this->host($result);
+}
  
 }
