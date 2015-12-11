@@ -18,6 +18,26 @@ class Reminder extends CI_Model {
 		return false;
 		}
     }
-
     
+    
+public function select_alleod($date){
+//    echo $date;
+//    die();
+        $this->db->select('*');
+		$this->db->from('EOD');
+                $this->db->where('Date',$date);
+		$query = $this->db->get();
+		if ($query->num_rows() > 0) {
+		return $query->result();
+		} else {
+		return false;
+		}
+    }  
+    
+    
+public function add_eod($data){
+     $this->db->insert('EOD', $data);
+     return true;    
+}
+
 }

@@ -69,9 +69,9 @@
     
   </script>    
     <script>
-// $(document).ready(function(){
-    // $('#myTable').dataTable();
-// });
+//$(document).ready(function(){
+//     $('#eod').DataTable();
+//});
 
 $(document).ready(function() {
     $('#myTable').DataTable( {
@@ -403,6 +403,19 @@ $(document).ready(function(){
                 });
                 
             });
+            
+         $(function () {
+               // $('#datetimepicker1').datetimepicker();
+                $('#datetimepicker12').datepicker({
+                  format: 'yyyy-mm-dd',
+                  endDate: new Date()
+                  
+                  
+                });
+                
+            });
+               
+            
         </script>
 
 
@@ -450,6 +463,25 @@ $(document).on("click", ".fulltutos", function () {
     });     
      
 });
+
+$(document).on("click", ".emailsend", function () {
+     var table = $('.eodtable').html();
+     
+        $.ajax({
+      type : 'post',
+      url  : '<?php echo base_url();?>server/email/send',
+      data : "table="+table,
+      
+      success : function(res) {
+          console.log(res);
+        }
+      
+    });     
+     
+     
+});
+
+
 </script>
 
 

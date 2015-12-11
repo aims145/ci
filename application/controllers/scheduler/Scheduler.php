@@ -38,8 +38,48 @@ public function addreminder(){
         $this->remindme();
     }
     
+    }
+    
+public function eod($msg = NULL){
+        $date = $this->input->post('date');
+        if($date == ''){
+        $date = date("Y-m-d");    
+        }
+        
+        $data['show_table'] = $this->Reminder->select_alleod($date);
+        $data['msg'] = $msg;
+        $this->load->view('header');
+	$this->load->view('dashboard');
+	$this->load->view('scheduler/eod', $data);
+	$this->load->view('footer');
     
 }
+
+public function addeod(){
+    $today = date("Y-m-d");
+    $data = array(
+        'Project' => $this->input->post('project'),
+        'Task' => $this->input->post('task'),
+        'Related_task' => $this->input->post('rtask'),
+        'Expected_time' => $this->input->post('etime'),
+        'Actual_time' => $this->input->post('atime'),
+        'Status' => $this->input->post('status'),
+        'Remark' => $this->input->post('remark'),
+        'Date' => $today
+        
+    );
+    if($this->Reminder->add_eod($data)){
+        $msg  = "Task Added Successfully";
+        $this->eod($msg);
+        
+    }
+    
+    
+    
+    
+}
+
+
 
 
 }

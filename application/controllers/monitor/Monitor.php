@@ -49,5 +49,15 @@ public function deletehost(){
      $result = $this->Monitor_model->deletehost($hostid);
      $this->host($result);
 }
+
+public function services(){
+
+				$this->load->view('header');
+                $this->load->view('dashboard');
+                $this->load->view('monitor/services_view');
+                $this->load->view('footer');	
+	
+}
+
  
 }

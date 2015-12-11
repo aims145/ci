@@ -337,7 +337,7 @@
                             <a href="#"><i class="fa fa-clock-o fa-fw"></i>Scheduler<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="/ci/server/tools/">Task Scheduler</a>
+                                    <a href="<?php echo base_url();?>server/scheduler/eod">EOD</a>
                                 </li>
                                 <li>
                                     <a href="<?php echo base_url();?>server/scheduler/remindme">Remind Me</a>
